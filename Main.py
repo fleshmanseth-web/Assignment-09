@@ -33,7 +33,7 @@ while not player.deck.is_empty() and not player2.deck.isempty():
     
     card1 = player1.deck.draw()
     card2 = player2.deck.draw()
-    pile.append(card1, card2)
+    pile.extend(card1, card2)
     
     print(f"{player1.name} drew the {str(card1)}.")
     print(f"{player2.name} drew the {str(card2)}.")
