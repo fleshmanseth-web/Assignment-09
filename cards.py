@@ -61,13 +61,13 @@ class deck:
     def add_cards(self, cards):
         self.cards_in_deck.extend(cards)
 
-deck1 = deck()
-#print(deck1.return_deck())
-#new_card = deck1.draw()
-#print(new_card.rank)
-    
-    # Deck Class:
-    
-    
-    # size()
-    # is_empty()
+    #Check to see how many cards are in the deck
+    def size(self):
+        return len(self.cards_in_deck)
+
+    #Checks to see if the deck is empty
+    def is_empty(self):
+        empty = False
+        if len(self.cards_in_deck) == 0:
+            empty = True
+        return empty
