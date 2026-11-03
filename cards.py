@@ -1,3 +1,5 @@
+import random
+
 #Here we are creating a class for cards
 #We have crated a dictionary that holds the cards value with its respective rank
 card_values = {
@@ -15,6 +17,10 @@ card_values = {
     'King': 13,
     'Ace': 14
 }
+
+suits = ["Spades", "Hearts", "Clubs", "Diamonds"]
+ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"]
+
 #The card class should contain: value, suit, rank
 class card:
     #We initialize the card
@@ -27,3 +33,30 @@ class card:
 #Methods
     #Draw a card and move cards up
     #Add cards to the bottom of the deck
+
+#Things they said they needed
+class deck:
+
+    #In the initialization function, a list is created with each of
+    #the 52 cards in the deck and then shuffled.
+    def __init__(self):
+        self.cards_in_deck = []
+        for suit in suits:
+            for rank in ranks:
+                new_card = card(rank, suit)
+                self.cards_in_deck.append(new_card)
+        #This is the part that shuffles the deck
+        random.shuffle(self.cards_in_deck)
+
+    def return_deck(self):
+        current_rank = self.cards_in_deck[3].rank
+        return current_rank
+
+deck1 = deck()
+print(deck1.return_deck())
+    
+    # Deck Class:
+    # draw()
+    # add_cards(cards)
+    # size()
+    # is_empty()
