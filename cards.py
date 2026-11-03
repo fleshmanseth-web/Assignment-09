@@ -54,7 +54,7 @@ class deck:
 
     #Draw() function
     def draw(self):
-        first_card = self.cards_in_deck.pop()
+        first_card = self.cards_in_deck.pop(0)
         return first_card
 
     #Add_card(cards)
