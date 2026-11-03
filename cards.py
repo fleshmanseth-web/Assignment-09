@@ -52,11 +52,22 @@ class deck:
         current_rank = self.cards_in_deck[3].rank
         return current_rank
 
+    #Draw() function
+    def draw(self):
+        first_card = self.cards_in_deck.pop()
+        return first_card
+
+    #Add_card(cards)
+    def add_cards(self, cards):
+        self.cards_in_deck.extend(cards)
+
 deck1 = deck()
-print(deck1.return_deck())
+#print(deck1.return_deck())
+#new_card = deck1.draw()
+#print(new_card.rank)
     
     # Deck Class:
-    # draw()
-    # add_cards(cards)
+    
+    
     # size()
     # is_empty()
