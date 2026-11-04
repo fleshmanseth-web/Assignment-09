@@ -1,6 +1,3 @@
-print("Hey guyz!!")
-print("Cosmo's Capable Coders for the W")
-
 
 # This is where the main game functions will run.
 
@@ -12,19 +9,16 @@ from player import player
 
 print("Welcome to Two-Deck War!")
 
-#Creating one deck per player and shuffling them
+#Creating one deck per player
 deck1 = deck()
 deck2 = deck()
-
-deck1.shuffle()
-deck2.shuffle()
 
 #Assigning players to their deck
 
 player1 = player("Player 1", deck1)
 player2 = player("Player 2", deck2)
 
-
+input("Press enter to begin!")
 #Keep the game going while both players still have cards
 while not player1.deck.is_empty() and not player2.deck.is_empty():
     
@@ -35,40 +29,40 @@ while not player1.deck.is_empty() and not player2.deck.is_empty():
     card2 = player2.deck.draw()
     pile.extend([card1, card2])
     
-    print(f"{player1.name} drew the {str(card1)}.")
-    print(f"{player2.name} drew the {str(card2)}.")
+    print(f"\n{player1.name} drew the {card1.rank} of {card1.suit}.")
+    print(f"{player2.name} drew the {card2.rank} of {card2.suit}.")
     # While loop that makes a War when player one and two play cards with equal values
     # if a player runs out of cards the loop stops
-    while card1.get_value() == card2.get_value() and not player1.deck.is_empty() and not player2.deck.is_empty():
-        print("War!")
+    while card1.value == card2.value and not player1.deck.is_empty() and not player2.deck.is_empty():
+        print("\nWar!")
         
         card1 = player1.deck.draw()
         card2 = player2.deck.draw()
         pile.extend([card1, card2])
         
-        print(f"{player1.name} drew the {str(card1)}.")
-        print(f"{player2.name} drew the {str(card2)}.")
+        print(f"\n{player1.name} drew the {card1.rank} of {card1.suit}.")
+        print(f"{player2.name} drew the {card2.rank} of {card2.suit}.")
     
     #Shuffle the pile so the decks aren't in the same order every time
     random.shuffle(pile)
     
     # Function that allows the Higher card to win the pile
-    if card1.get_value() > card2.get_value():
+    if card1.value > card2.value:
         player1.deck.add_cards(pile)
-        print(f"{player1.name} wins the round!")
-    elif card2.get_value() > card1.get_value():
+        print(f"\n{player1.name} wins the round!")
+    elif card2.value > card1.value:
         player2.deck.add_cards(pile)
-        print(f"{player2.name} wins the round!")
+        print(f"\n{player2.name} wins the round!")
     elif player1.deck.is_empty():
         #If a player runs out mid war the player with cards left takes the pile
         player2.deck.add_cards(pile)
     else:
         player1.deck.add_cards(pile)
     
-    print(f"{player1.name} has {str(player1.deck.size())} cards.")
+    print(f"\n{player1.name} has {str(player1.deck.size())} cards.")
     print(f"{player2.name} has {str(player2.deck.size())} cards.")
     
-    input("Press Enter to play the next round.")
+    input("\nPress Enter to play the next round.")
     
 #The player with cards left at the end wins the game
 if player1.deck.is_empty():
@@ -76,6 +70,6 @@ if player1.deck.is_empty():
 else:
     winner = player1
     
-print(f"{winner.name} has collected all of the cards.")
+print(f"\n{winner.name} has collected all of the cards.")
 print(f"{winner.name} wins the game!")
     
