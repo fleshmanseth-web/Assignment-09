@@ -48,10 +48,6 @@ class deck:
         #This is the part that shuffles the deck
         random.shuffle(self.cards_in_deck)
 
-    def return_deck(self):
-        current_rank = self.cards_in_deck[3].rank
-        return current_rank
-
     #Draw() function
     def draw(self):
         first_card = self.cards_in_deck.pop(0)
