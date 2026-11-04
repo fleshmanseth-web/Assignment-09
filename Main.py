@@ -62,7 +62,7 @@ while not player1.deck.is_empty() and not player2.deck.is_empty():
     print(f"\n{player1.name} has {str(player1.deck.size())} cards.")
     print(f"{player2.name} has {str(player2.deck.size())} cards.")
 
-    if player1.deck.is_empty() and not player2.deck.is_empty():
+    if not player1.deck.is_empty() and not player2.deck.is_empty():
         input("\nPress Enter to play the next round.")
     
 #The player with cards left at the end wins the game
