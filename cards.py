@@ -1,7 +1,7 @@
 import random
 
 #Here we are creating a class for cards
-#We have crated a dictionary that holds the cards value with its respective rank
+#We have created a dictionary that holds the cards value with its respective rank
 card_values = {
     '2': 2,
     '3': 3,
@@ -34,7 +34,6 @@ class card:
     #Draw a card and move cards up
     #Add cards to the bottom of the deck
 
-#Things they said they needed
 class deck:
 
     #In the initialization function, a list is created with each of

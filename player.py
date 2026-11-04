@@ -1,7 +1,4 @@
 
-#import deck class from cards to be used in player class
-from cards import deck
-
 #player class to store player name, and player deck
 class player:
 

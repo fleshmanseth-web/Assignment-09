@@ -46,7 +46,7 @@ while not player1.deck.is_empty() and not player2.deck.is_empty():
     #Shuffle the pile so the decks aren't in the same order every time
     random.shuffle(pile)
     
-    # Function that allows the Higher card to win the pile
+    # If statement allows the Higher card to win the pile
     if card1.value > card2.value:
         player1.deck.add_cards(pile)
         print(f"\n{player1.name} wins the round!")
