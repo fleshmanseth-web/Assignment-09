@@ -25,8 +25,8 @@ while not player1.deck.is_empty() and not player2.deck.is_empty():
     #Create a list and add all cards played in a round to the list. At the end the winner takes all the cards
     pile = []
     
-    card1 = player1.deck.draw()
-    card2 = player2.deck.draw()
+    card1 = player1.play_card()
+    card2 = player2.play_card()
     pile.extend([card1, card2])
     
     print(f"\n{player1.name} drew the {card1.rank} of {card1.suit}.")
@@ -36,8 +36,8 @@ while not player1.deck.is_empty() and not player2.deck.is_empty():
     while card1.value == card2.value and not player1.deck.is_empty() and not player2.deck.is_empty():
         print("\nWar!")
         
-        card1 = player1.deck.draw()
-        card2 = player2.deck.draw()
+        card1 = player1.play_card()
+        card2 = player2.play_card()
         pile.extend([card1, card2])
         
         print(f"\n{player1.name} drew the {card1.rank} of {card1.suit}.")
@@ -61,8 +61,9 @@ while not player1.deck.is_empty() and not player2.deck.is_empty():
     
     print(f"\n{player1.name} has {str(player1.deck.size())} cards.")
     print(f"{player2.name} has {str(player2.deck.size())} cards.")
-    
-    input("\nPress Enter to play the next round.")
+
+    if player1.deck.is_empty() and not player2.deck.is_empty():
+        input("\nPress Enter to play the next round.")
     
 #The player with cards left at the end wins the game
 if player1.deck.is_empty():
